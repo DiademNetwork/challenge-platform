@@ -1,0 +1,19 @@
+{
+  "presets": [
+    "@babel/preset-env",
+    "@babel/preset-react"
+  ],
+  "plugins": [
+    [
+      "transform-class-properties",
+      { "spec": true }
+    ],
+    [
+      "babel-plugin-root-import",
+      {
+        "rootPathSuffix": "app/javascripts",
+        "rootPathPrefix": "@"
+      }
+    ]
+  ]
+}
