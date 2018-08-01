@@ -5,6 +5,8 @@ import { Link } from 'react-router-dom'
 
 import Hero from '@/components/hero'
 
+import SummaryImage from '@/../images/summary.jpg'
+
 export default class Landing extends Component {
 
   render () {
@@ -14,10 +16,12 @@ export default class Landing extends Component {
           <div className="column"></div>
 
           <div className="column is-two-thirds">
+            <img src={`/${SummaryImage}`} />
+
             <p className="title">
               How does it works?
             </p>
-            <p>
+            <div>
               <p>Any challenge(talent/action/decision) can be as expressed as Non-Fungible Token</p>
               <p>Every token has single owner, the person who has accepted the challenge</p>
               <p>The community can watch on the progress checking the proofs published in social networks</p>
@@ -25,7 +29,7 @@ export default class Landing extends Component {
               <p>Any sponsor can reserve funds that will be available for withdrawn when challenge will receive confirmation from trusted member</p>
               <p>The person receive motivation from community and guaranteed rewards for execution of challenge</p>
               <p>The sponsors receives personal token of person and gain profit from his growth and success</p>
-            </p>
+            </div>
 
             <br />
             <Link to="/challenges/new" className="button is-info is-large">
