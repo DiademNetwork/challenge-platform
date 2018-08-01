@@ -7,3 +7,4 @@ secrets
 functions
 networks/1234.json
 .idea
+.env
