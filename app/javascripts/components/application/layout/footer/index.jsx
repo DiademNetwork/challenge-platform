@@ -12,7 +12,8 @@ export default class Footer extends Component {
         <div className="container">
           <div className="content has-text-centered">
             <p>
-              Contact with us: team@challenge.do
+              github.com/DiademNetwork/challenge-platform
+              <br />team@challenge.do
             </p>
           </div>
         </div>

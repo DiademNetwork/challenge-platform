@@ -64,20 +64,23 @@ const CustomizeToken = class extends Component {
       this.setState({ titleError: 'Please enter at least 1 character for the title' })
     } else {
       try {
-        let contractInstance = await nfToken(window.web3);
+        const contractInstance = await nfToken(window.web3);
 
-        const txHash = await contractInstance.create.sendTransaction(
+        const value = window.web3.toWei(this.state.price, 'ether')
+
+        const txHash = await contractInstance.createWithReward.sendTransaction(
           this.state.title,
           this.state.tokenType,
-          this.state.price,
+          value,
           this.state.verifier,
-          { value: this.state.price }
+          { value }
         )
 
         this.props.addToken({ transactionHash: txHash })
         this.setState({ redirectToTokenList: true })
         toastr.success('Success', 'The transaction has been broadcast.')
       } catch(err) {
+        console.log(err)
         toastr.error('Error', 'The transaction was cancelled or rejected.')
       }
     }
@@ -137,7 +140,6 @@ const CustomizeToken = class extends Component {
                     <div className="control">
                       <input placeholder={`How much are you ready to pay for this?`} className="input" value={this.state.price}
                              onChange={(e) => this.setState({ price: e.target.value })} />
-                      <Ether wei={this.state.price} />
                     </div>
                   </div>
 

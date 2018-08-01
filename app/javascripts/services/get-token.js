@@ -6,9 +6,13 @@ export default function (tokenId, web3) {
   return new Promise((resolve, reject) => {
     contract.then((instance) => {
       instance.getToken(tokenId).then((response) => {
+        const type = response[0] === true ? 1 : 0
+        const title = response[1].toString()
+        const reward = parseInt(response[2])
+        const verifiers = response[3]
+
         resolve([
-          parseInt(response[0].toString()),
-          response[1].toString()
+          type, title, reward, verifiers
         ])
       }).catch((error) => reject)
     })

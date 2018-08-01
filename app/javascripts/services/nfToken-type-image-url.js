@@ -1,11 +1,11 @@
 const TOKEN_TYPE_IMAGE_URLS = [
-  '/images/token-images/icons-sword--1024-1024.png',
-  '/images/token-images/icons-shield--1024-1024.png'
+  '/images/token-images/personal_challenge.png',
+  '/images/token-images/community_challenge.png'
 ]
 
 const TOKEN_TYPE_IMAGE_URLS_SMALL = [
-  '/images/token-images/icons-sword--128-128.png',
-  '/images/token-images/icons-shield--128-128.png'
+  '/images/token-images/personal_challenge_small.png',
+  '/images/token-images/community_challenge_small.png'
 ]
 
 export default function (tokenType, size) {
