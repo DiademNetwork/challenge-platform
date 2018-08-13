@@ -18,6 +18,15 @@ module.exports = {
   }
 }
 
+if (process.env.MAINNET_PROVIDER_URL) {
+  module.exports.networks['mainnet'] = {
+    provider: new HDWalletProvider(mnemonic, process.env.MAINNET_PROVIDER_URL),
+    network_id: 1,
+    gas: 4612388,
+    gasPrice: 5000000000
+  }
+}
+
 if (process.env.ROPSTEN_PROVIDER_URL) {
   module.exports.networks['ropsten'] = {
     provider: new HDWalletProvider(mnemonic, process.env.ROPSTEN_PROVIDER_URL),
